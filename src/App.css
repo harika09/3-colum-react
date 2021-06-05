@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--Transparent-white);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+  --Transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background-color: var(--Very-light-gray);
+}
+
+.bd-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 1204px;
+}
+
+@media screen and (min-width: 1204px) {
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.main-wrapper {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.main-wrapper .card {
+  padding: 50px 30px;
+  background-color: var(--Bright-orange);
+  border-radius: 14px 0 0 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card:nth-child(2) {
+  background-color: var(--Very-dark-cyan);
+  border-radius: 0;
+}
+
+.card:nth-child(3) {
+  background-color: var(--Dark-cyan);
+  border-radius: 0 14px 14px 0;
+}
+
+.main-wrapper .card h2 {
+  color: var(--Transparent-white);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 2rem;
+}
+.main-wrapper .card p {
+  font-size: 15px;
+  max-width: 250px;
+  letter-spacing: 2px;
+  margin-bottom: 90px;
+  line-height: 30px;
+}
+
+.main-wrapper .card button {
+  outline: none;
+  border: 3px solid transparent;
+  background-color: var(--Transparent-white);
+  padding: 15px 20px;
+  border-radius: 50px;
+  color: var(--Bright-orange);
+  cursor: pointer;
+}
+
+.main-wrapper .card:nth-child(2) button {
+  color: var(--Dark-cyan);
+  cursor: pointer;
+}
+
+.main-wrapper .card:nth-child(3) button {
+  color: var(--Very-dark-cyan);
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: var(--Bright-orange);
+  color: var(--Transparent-white);
+  border: 3px solid var(--Transparent-white);
+}
+
+.card:nth-child(2) button:hover {
+  background-color: var(--Dark-cyan);
+  color: var(--Transparent-white);
+}
+
+.card:nth-child(3) button:hover {
+  background-color: var(--Very-dark-cyan);
+  color: var(--Transparent-white);
+}
+
+button:active {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .main-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-wrapper .card {
+    border-radius: 14px 14px 0 0;
+    padding: 50px;
+  }
+
+  .main-wrapper .card:nth-child(2) {
+    border-radius: 0;
+  }
+
+  .main-wrapper .card:nth-child(3) {
+    border-radius: 0 0 14px 14px;
+    margin-bottom: 40px;
   }
 }
